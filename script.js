@@ -43,7 +43,7 @@ async function populateStationDatalist(){
   }
 }
 
-// populateStationDatalist();
+populateStationDatalist();
 
 async function fetchAllResults(url){
   const pageSize = 100;
