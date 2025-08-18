@@ -1,0 +1,129 @@
+* {
+    text-decoration: none;
+    list-style-type: none;
+    user-select: none;
+}
+
+body {
+    background-color: #cccccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99vh;
+}
+
+.content {
+    position: fixed;
+
+    background-color: #eaeaea;
+    width: 97vw;
+    height: 95vh;
+    border-radius: 25px;
+
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search-section {
+    /*border: 1px solid red;*/
+    width: 60%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search-element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: large;
+}
+
+.input {
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+#checkOption {
+    width: 40px;
+    height: 40px;
+
+}
+
+#searchBtn {
+    width: 200px;
+    height: 40px;
+    border-radius: 15px;
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: large;
+}
+
+.results-container {
+    /*border: 1px solid red;*/
+    width: 60%;
+    height: 65%;
+    margin-top: 2.5%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #cccccc;
+    border-radius: 25px;
+    /*align-items: center;*/
+}
+
+.selection-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: fit-content;
+    /*border: 1px solid red;*/
+    margin-bottom: 10px;
+}
+.trains-container {
+    width: 50%;
+}
+.hidden{
+    display: none;
+}
+
+.results{
+    width: 90%;
+}
+
+.train-destination{
+    font-weight: bold;
+    font-size: large;
+    width: 100%;
+    border: 1px solid #eaeaea;
+    background-color: #eaeaea;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+
+.trains-container{
+    width: 50%;
+    max-height: 200px;
+    overflow: scroll;
+    /*border: 1px solid blue*/
+}
+
+.train{
+    width: 90%;
+    height: 50px;
+    /*border: 1px solid yellow;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #cccccc;
+}
+
