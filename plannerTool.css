@@ -1,0 +1,269 @@
+*{
+    font-family: "IBM Plex Sans Condensed", "Arial Narrow", Arial, sans-serif;
+    user-select: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body{
+    position: fixed;
+    background-color: rgb(240, 236, 230);
+}
+
+#chainContainer {
+    height: 10vh;
+    /*border: 1px solid red;*/
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(155, 39, 67);
+    color: white;
+
+}
+
+#trainChain {
+    height: 80%;
+    /*border: 1px solid green;*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+#trainChain::-webkit-scrollbar {
+    display: none;
+}
+
+.elementInChain{
+    height: 100%;
+    min-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid green;*/
+    font-weight: bold;
+}
+
+.stationInChain{
+    min-width: 200px;
+    border-radius: 20px;
+    background-color: rgb(10, 60, 120);
+    /*color: rgb(240, 236, 230);*/
+
+    padding: 0 15px 0 15px;
+}
+
+.departureInChain,
+.arrivalInChain{
+    padding: 0 10px 0 10px;
+}
+
+.separationInChain{
+    padding: 0;
+}
+
+/*background-color: rgb(240, 236, 230) beige*/
+/*rgb(10, 60, 120) blue*/
+/*rgb(155, 39, 67) red*/
+
+.input,
+#searchBtn {
+    width: 250px;
+    height: 44px;
+    max-height: 44px;
+    border-radius: 60px;
+    background-color: white;
+    padding: 0 1vw 0 1vw;
+}
+
+.stationName {
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: center;
+    background: rgb(155, 39, 67);
+    padding: 8px 10px;
+}
+
+.trainsList {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    margin: 0;
+    padding: 8px 10px;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.train {
+    background-color: white;
+    color: black;
+    /*background-color: rgb(155, 39, 67);*/
+    margin-top: 10px;
+    padding: 6px;
+    border-radius: 60px;
+    width: 50%;
+    text-align: center;
+}
+
+
+@media (orientation: portrait){
+
+    #chainContainer{
+        height: 10vw;
+    }
+
+    .search-section{
+        width: 100%;
+        height: 30vw;
+        /*border: 1px solid red;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-element{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    .input,
+    #searchBtn{
+        /*text-align: center;*/
+        width: 80vw;
+        min-height: 7vw;
+    }
+
+    #searchBtn{
+        width: 82vw;
+    }
+
+    label{
+        display: none;
+    }
+
+
+    .grid-container {
+        width: 100vw;
+        position: fixed;
+        top: 40vw;
+        left: 0;
+        /*flex: 0 0 auto;*/
+        height: 80vh;
+        overflow-y: scroll;
+    }
+
+    #results {
+        height: fit-content;
+        width: 100%;
+        /*border: 1px solid green;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .stationLi {
+        margin-top: 20px;
+        height: 250px;
+        width: 80%;
+        background: #0a3c78;
+        color: #f0ece6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 12px;
+        overflow: hidden;
+        font-size: larger;
+    }
+
+}
+
+@media (orientation: landscape) {
+
+    .search-section {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    .search-element {
+        /*border: 1px solid green;*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*.input{*/
+    /*    padding: 0 10px 0 10px;*/
+    /*}*/
+
+    #searchBtn {
+        background-color: rgb(10, 60, 120);
+        color: white;
+        font-weight: bold;
+    }
+
+    label {
+        font-weight: bold;
+        font-size: large;
+    }
+
+
+    .grid-container {
+        height: 80vh; /* or any fixed height */
+        overflow-y: auto; /* vertical scroll when content overflows */
+    }
+
+    #results {
+        display: grid;
+        grid-template-columns: repeat(2, 40%); /* two columns, each 40% */
+        justify-content: center;
+        gap: 20px 6.6%;
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .stationLi {
+        height: 30vh;
+        background: #0a3c78;
+        /*background-color: rgb(155, 39, 67);*/
+        color: #f0ece6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 12px;
+        overflow: hidden;
+        /*overflow-y: scroll;*/
+    }
+
+    .train:hover {
+        cursor: pointer;
+    }
+}

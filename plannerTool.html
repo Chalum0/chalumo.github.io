@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planner Tool</title>
+    <script src="plannerTool.js" defer></script>
+    <script src="plannerTool2.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="plannerTool.css">
+</head>
+<body>
+    <div id="chainContainer">
+        <ul id="trainChain">
+
+        </ul>
+    </div>
+
+
+    <div class="search-section">
+
+        <div class="search-element">
+            <label for="station">Gare de départ</label>
+            <input class="input" id="station" list="stations" placeholder="Tapez une gare (ex : BORDEAUX ST JEAN)" autocomplete="off" />
+            <datalist id="stations"></datalist>
+        </div>
+
+        <div class="search-element">
+            <button id="searchBtn">Chercher</button>
+        </div>
+
+        <div class="search-element">
+            <label for="date">Date</label>
+            <input class="input" id="date" type="date" />
+        </div>
+
+
+    </div>
+    <div class="grid-container">
+        <ul id="results">
+
+        </ul>
+    </div>
+
+</body>
+</html>

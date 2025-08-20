@@ -43,7 +43,7 @@ async function populateStationDatalist(){
   }
 }
 
-populateStationDatalist();
+// populateStationDatalist();
 
 async function fetchAllResults(url){
   const pageSize = 100;
@@ -160,6 +160,10 @@ searchBtn.addEventListener('click', async ()=>{
     results.innerHTML = '';
 
     console.log(data)
+
+    data.forEach(train => {
+      console.log(train);
+    })
     data.sort((a, b) => {
       const dateA = new Date(`${a.date}T${a.heure_depart}`);
       const dateB = new Date(`${b.date}T${b.heure_depart}`);
@@ -177,13 +181,14 @@ searchBtn.addEventListener('click', async ()=>{
         let destinations = Object.keys(sortedData);
 
         for (const destination of destinations) {
+          console.log(`searching destination: ${destination}`);
           let returnUrl = buildReturnSearchUrl(destination, gare, date);
           const returnTrips = await fetchAllResults(returnUrl);
 
           if (!returnTrips.length){
-            console.log(destination)
             delete sortedData[destination]
-          } else {
+          }
+          else {
             returnTrips.sort((a, b) => {
               const dateA = new Date(`${a.date}T${a.heure_depart}`);
               const dateB = new Date(`${b.date}T${b.heure_depart}`);
@@ -234,12 +239,14 @@ searchBtn.addEventListener('click', async ()=>{
           t.classList.add('train')
           outboundListContainer.appendChild(t)
         })
-        returnData[key].forEach(train => {
-          const t = document.createElement('li')
-          t.textContent = `${train.train_no}: ${train.heure_depart} - arrivée ${train.heure_arrivee}`
-          t.classList.add('train')
-          returnListContainer.appendChild(t)
-        })
+        if (returnData.length) {
+          returnData[key].forEach(train => {
+            const t = document.createElement('li')
+            t.textContent = `${train.train_no}: ${train.heure_depart} - arrivée ${train.heure_arrivee}`
+            t.classList.add('train')
+            returnListContainer.appendChild(t)
+          })
+        }
 
         sectionLi.addEventListener('click', e => {
           if (selectionContainer.classList.contains('hidden')) {
@@ -250,9 +257,7 @@ searchBtn.addEventListener('click', async ()=>{
         })
 
       })
-
     }
-
   } catch (e) {
     console.error(e);
   }
