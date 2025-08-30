@@ -1,4 +1,4 @@
-const stationInput = document.querySelector('#station');
+const stationInput = document.querySelector('#station-input');
 const dateInput = document.querySelector('#date');
 const searchBtn = document.querySelector('#searchBtn');
 const results = document.querySelector('#results');
