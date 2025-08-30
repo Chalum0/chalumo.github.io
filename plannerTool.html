@@ -7,6 +7,7 @@
     <script src="plannerTool2.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="plannerTool.css">
+    <script src="manualRouting/autoCompletion.js" defer></script>
 
     <script data-goatcounter="https://chalumo.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
@@ -22,9 +23,10 @@
     <div class="search-section">
 
         <div class="search-element">
-            <label for="station">Gare de départ</label>
-            <input class="input" id="station" list="stations" placeholder="Tapez une gare (ex : BORDEAUX ST JEAN)" autocomplete="off" />
-            <datalist id="stations"></datalist>
+            <label for="station-input">Gare de départ</label>
+            <input class="input" id="station-input" list="stations" placeholder="Tapez une gare (ex : BORDEAUX ST JEAN)" autocomplete="off" />
+            <!--            <datalist id="stations"></datalist>-->
+            <div id="error" style="color:red; font-size:0.9em;"></div>
         </div>
 
         <div class="search-element">
