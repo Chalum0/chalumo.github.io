@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrainLookUp</title>
+    <link rel="stylesheet" href="TrainLookUp.css">
+    <script src="TrainLookUp.js" defer></script>
+</head>
+<body>
+    <p>
+        Get trains that have the
+        <select id="order">
+            <option value="earliest">earliest</option>
+            <option value="latest">latest</option>
+        </select>
+        <select id="target">
+            <option value="departure">departure</option>
+            <option value="arrival">arrival</option>
+        </select>
+        on
+        <input type="date" id="date">
+        .
+    </p>
+
+    <ul id="output"></ul>
+</body>
+</html>

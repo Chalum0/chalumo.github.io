@@ -1,0 +1,61 @@
+body {
+    font-family: system-ui, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    margin: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+select,
+input[type="date"] {
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 0 0.3rem;
+    background: white;
+    cursor: pointer;
+}
+
+select:focus,
+input[type="date"]:focus {
+    border-color: #0078d7;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 120, 215, 0.2);
+}
+
+ul#output {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Train {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    transition: box-shadow 0.2s ease;
+}
+
+.Train:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.stationAndTime {
+    font-weight: bold;
+    color: #0078d7;
+}
+
+.stationName {
+    font-size: 0.95rem;
+    color: #444;
+}
